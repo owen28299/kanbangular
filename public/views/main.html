@@ -3,11 +3,15 @@
 <fieldset>
   <div>
     <label for="Title">Task</label>
-    <input type="text" id="Title" ng-model="newTask.task">
+    <input type="text" id="Title" ng-model="newTask.title">
   </div>
   <div>
-    <label for="Author">Author</label>
-    <input type="text" id="Author" ng-model="newTask.description">
+    <label for="Description">Description</label>
+    <input type="text" id="Description" ng-model="newTask.description">
+  </div>
+  <div>
+    <label for="Status">Status</label>
+    <input type="text" id="Status" ng-model="newTask.status">
   </div>
   <div>
     <button ng-click="TaskService.addTask(newTask)">Add Task</button>
@@ -17,10 +21,34 @@
 
 <div id="todo">
   <h2>To Do</h2>
+  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='todo'">
+    <li>
+      Task : {{task.title}}
+    </li>
+    <li>
+      Description : {{task.description}}
+    </li>
+  </ul>
 </div>
 <div id="doing">
   <h2>Doing</h2>
+  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='doing'">
+    <li>
+      Task : {{task.title}}
+    </li>
+    <li>
+      Description : {{task.description}}
+    </li>
+  </ul>
 </div>
 <div id="done">
   <h2>Done</h2>
+  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='done'">
+    <li>
+      Task : {{task.title}}
+    </li>
+    <li>
+      Description : {{task.description}}
+    </li>
+  </ul>
 </div>
