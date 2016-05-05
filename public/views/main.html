@@ -1,1 +1,26 @@
 <h1>{{name}}</h1>
+
+<fieldset>
+  <div>
+    <label for="Title">Task</label>
+    <input type="text" id="Title" ng-model="newTask.task">
+  </div>
+  <div>
+    <label for="Author">Author</label>
+    <input type="text" id="Author" ng-model="newTask.description">
+  </div>
+  <div>
+    <button ng-click="TaskService.addTask(newTask)">Add Task</button>
+  </div>
+</fieldset>
+
+
+<div id="todo">
+  <h2>To Do</h2>
+</div>
+<div id="doing">
+  <h2>Doing</h2>
+</div>
+<div id="done">
+  <h2>Done</h2>
+</div>
