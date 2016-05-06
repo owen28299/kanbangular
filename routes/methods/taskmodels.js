@@ -1,6 +1,6 @@
 'use strict';
 
-var database = require('../db-temp/taskdb');
+var database = require('../../db-temp/taskdb');
 
 function taskModel(){
 

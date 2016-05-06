@@ -2,7 +2,7 @@
 
 const express   = require('express'),
       router    = express.Router(),
-      taskModel = require('../models/taskmodels')
+      taskModel = require('./methods/taskmodels')
       ;
 
 router.route('/')
