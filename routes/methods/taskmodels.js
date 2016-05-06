@@ -3,21 +3,10 @@ const db = require('../../models'),
       Task = db.Task
       ;
 
-
-var database = require('../../db-temp/taskdb');
-
 function taskModel(){
-
-    var tasks = database.tasks;
 
     function getTasks(){
       return Task.findAll();
-    }
-
-    function getTask(id){
-      return tasks.filter(function(task){
-        return id === task.id;
-      })[0];
     }
 
     function addTask(task){
@@ -25,9 +14,7 @@ function taskModel(){
       var newTask = {
         title : task.title,
         description : task.description,
-        status : task.status,
-        createdAt : new Date(),
-        updatedAt : new Date()
+        status : task.status
       };
 
       Task.create(newTask);
@@ -63,7 +50,6 @@ function taskModel(){
 
     return {
       getTasks : getTasks,
-      getTask : getTask,
       addTask : addTask,
       changeTask : changeTask
     };
