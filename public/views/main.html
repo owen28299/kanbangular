@@ -31,7 +31,12 @@
       </div>
     </li>
     <li>
-      Description : {{task.description}}
+      <div ng-init="editModeDes.value=false">
+        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+      </div>
     </li>
   </ul>
 </div>
@@ -39,10 +44,20 @@
   <h2>Doing</h2>
   <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='doing'">
     <li>
-      Task : {{task.title}}
+      <div ng-init="editMode.value=false">
+        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+        <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
+        <input type="submit" ng-show="editMode.value" ng-click="TaskService.changeTask('title',titleText,task.id); toggle(editMode)">
+        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+      </div>
     </li>
     <li>
-      Description : {{task.description}}
+      <div ng-init="editModeDes.value=false">
+        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+      </div>
     </li>
   </ul>
 </div>
@@ -50,10 +65,20 @@
   <h2>Done</h2>
   <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='done'">
     <li>
-      Task : {{task.title}}
+      <div ng-init="editMode.value=false">
+        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+        <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
+        <input type="submit" ng-show="editMode.value" ng-click="TaskService.changeTask('title',titleText,task.id); toggle(editMode)">
+        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+      </div>
     </li>
     <li>
-      Description : {{task.description}}
+      <div ng-init="editModeDes.value=false">
+        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+      </div>
     </li>
   </ul>
 </div>
