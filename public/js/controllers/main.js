@@ -5,15 +5,17 @@
     .controller('MainController', ['$scope', '$http', 'TaskService',
     function($scope, $http, TaskService){
 
-      // TaskService.$get.getName()
-      // .then(function(response){
-      //   $scope.name = response.data;
+      // TaskService.getName().then(function (res){
+
       // });
-     TaskService.getName().then(function (res){
-        $scope.name = res.data;
-      });
+
+      $scope.name = "KanBangular";
 
       $scope.TaskService = TaskService;
+
+      TaskService.getTasks().then(function(data){
+        $scope.tasks = data.data;
+      });
 
       $scope.toggle = function(editMode){
         if (editMode.value){

@@ -4,6 +4,7 @@
 
   angular.module('kanban')
     .service('TaskService', ['$http', function TaskService($http){
+
     this.tasks = [
       {
         id : 1,
@@ -25,13 +26,13 @@
       }
     ];
 
-   this.getName = function(){
-      return $http({
-        method : "GET",
-        url : '/task'
-      });
+    // this.getName = function(){
+    //   return $http({
+    //     method : "GET",
+    //     url : '/task'
+    //   });
 
-    };
+    // };
 
     this.nextId = function(){
       return this.tasks.reduce(function(highest, task){
@@ -40,7 +41,10 @@
     };
 
     this.getTasks = function(){
-      return this.tasks;
+      return $http({
+        method : "GET",
+        url : '/task'
+      });
     };
 
     this.getTask = function(id){
@@ -62,6 +66,7 @@
       var task = this.getTask(id);
       task[field] = update;
     };
+
   }]);
 
 })();

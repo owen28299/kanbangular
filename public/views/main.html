@@ -21,7 +21,7 @@
 
 <div id="todo">
   <h2>To Do</h2>
-  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='todo'">
+  <ul ng-repeat="task in tasks | filter:task.status='todo'">
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -45,7 +45,7 @@
 </div>
 <div id="doing">
   <h2>Doing</h2>
-  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='doing'">
+  <ul ng-repeat="task in tasks | filter:task.status='doing'">
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -70,7 +70,7 @@
 </div>
 <div id="done">
   <h2>Done</h2>
-  <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='done'">
+  <ul ng-repeat="task in tasks | filter:task.status='done'">
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
