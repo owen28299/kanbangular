@@ -38,6 +38,9 @@
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
     </li>
+    <li>
+      <button ng-click="TaskService.changeTask('status','doing',task.id)">></button>
+    </li>
   </ul>
 </div>
 <div id="doing">
@@ -59,6 +62,10 @@
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
     </li>
+    <li>
+      <button ng-click="TaskService.changeTask('status','todo',task.id)"><</button>
+      <button ng-click="TaskService.changeTask('status','done',task.id)">></button>
+    </li>
   </ul>
 </div>
 <div id="done">
@@ -79,6 +86,9 @@
         <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
+    </li>
+    <li>
+      <button ng-click="TaskService.changeTask('status','doing',task.id)"><</button>
     </li>
   </ul>
 </div>

@@ -50,8 +50,6 @@
     };
 
     this.changeTask = function(field, update, id){
-      console.log(id);
-
       var task = this.getTask(id);
       task[field] = update;
     };
