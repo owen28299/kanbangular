@@ -49,6 +49,10 @@
       });
     };
 
+    this.changeTask = function(field, update, id){
+      var task = this.getTask(id);
+      task.field = update;
+    };
   }
 
   angular.module('kanban')
