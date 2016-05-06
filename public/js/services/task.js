@@ -2,7 +2,8 @@
 
 (function(){
 
-  function TaskService(){
+  angular.module('kanban')
+    .service('TaskService', ['$http', function TaskService($http){
     this.tasks = [
       {
         id : 1,
@@ -23,6 +24,14 @@
         status : "done"
       }
     ];
+
+   this.getName = function(){
+      return $http({
+        method : "GET",
+        url : '/task'
+      });
+
+    };
 
     this.nextId = function(){
       return this.tasks.reduce(function(highest, task){
@@ -53,9 +62,6 @@
       var task = this.getTask(id);
       task[field] = update;
     };
-  }
-
-  angular.module('kanban')
-    .service('TaskService', TaskService);
+  }]);
 
 })();
