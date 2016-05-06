@@ -21,7 +21,7 @@
         })
         .when('/signup', {
           templateUrl : 'views/signup.html',
-          controller  : 'SignUpController'
+          controller  : 'UserController'
         });
 
     }])

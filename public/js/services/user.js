@@ -2,7 +2,7 @@
 
 (function(){
   angular.module('kanban')
-    .service('SignUpService', ['$http', function SignUpService($http){
+    .service('UserService', ['$http', function UserService($http){
 
         this.addUser = function(user){
           var data = {
@@ -18,6 +18,13 @@
 
           return $http.post('/user', data, config);
 
+        };
+
+        this.getUsers = function(){
+          return $http({
+            method : "GET",
+            url : '/user'
+          });
         };
 
 

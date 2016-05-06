@@ -41,6 +41,11 @@
     <li>
       <button ng-click="changeTask('status','doing',task.id)">></button>
     </li>
+    <li ng-controller="UserController">
+      <select>
+        <option ng-repeat="user in users" value="user.first_name">{{user.first_name}}</option>
+      </select>
+    </li>
   </ul>
 </div>
 <div id="doing">
@@ -66,6 +71,11 @@
       <button ng-click="changeTask('status','todo',task.id)"><</button>
       <button ng-click="changeTask('status','done',task.id)">></button>
     </li>
+    <li ng-controller="UserController">
+      <select>
+        <option ng-repeat="user in users" value="user.first_name">{{user.first_name}}</option>
+      </select>
+    </li>
   </ul>
 </div>
 <div id="done">
@@ -89,6 +99,11 @@
     </li>
     <li>
       <button ng-click="changeTask('status','doing',task.id)"><</button>
+    </li>
+    <li ng-controller="UserController">
+      <select>
+        <option ng-repeat="user in users" value="user.first_name">{{user.first_name}}</option>
+      </select>
     </li>
   </ul>
 </div>

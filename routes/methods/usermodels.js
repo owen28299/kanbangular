@@ -17,8 +17,14 @@ function userModel(){
     return(newUser);
   }
 
+
+  function getUsers(){
+    return User.findAll();
+  }
+
   return {
-    addUser : addUser
+    addUser  : addUser,
+    getUsers : getUsers
   };
 
 }
