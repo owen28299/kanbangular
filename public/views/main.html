@@ -23,7 +23,12 @@
   <h2>To Do</h2>
   <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='todo'">
     <li>
-      Task : {{task.title}}
+      <div ng-init="editMode.value=false">
+        <p ng-hide="editMode.value">{{task.title}}</p>
+        <input type="text" ng-show="editMode.value">
+        <button ng-click="toggle(editMode)">
+        {{editMode.value}}
+      </div>
     </li>
     <li>
       Description : {{task.description}}
