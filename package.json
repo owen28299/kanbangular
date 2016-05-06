@@ -20,6 +20,8 @@
   "homepage": "https://github.com/owen28299/kanbangular#readme",
   "dependencies": {
     "body-parser": "^1.15.0",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "sequelize": "^3.22.0",
+    "sequelize-cli": "^2.4.0"
   }
 }
