@@ -54,12 +54,21 @@
     };
 
     this.addTask = function(task){
-      this.tasks.push({
+      var data = {
         id : this.nextId,
         title : task.title,
         description : task.description,
         status : task.status
-      });
+      };
+
+      var config = {
+        headers : {
+          'Content-Type': 'application/json'
+        }
+      };
+
+      return $http.post('/task', data, config);
+
     };
 
     this.changeTask = function(field, update, id){

@@ -3,8 +3,12 @@
 const express = require('express'),
       app     = express(),
       PORT    = process.env.PORT || 3000,
-      taskRoute = require('./routes/task')
+      taskRoute = require('./routes/task'),
+      bodyParser = require('body-parser')
       ;
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(express.static('public'));
 app.use('/task', taskRoute);

@@ -23,12 +23,18 @@ function taskModel(){
     }
 
     function addTask(task){
-      tasks.push({
-        id : nextId,
+
+      var newTask = {
+        id : nextId(),
         title : task.title,
         description : task.description,
         status : task.status
-      });
+      };
+
+      tasks.push(newTask);
+
+
+      return(newTask);
     }
 
     function changeTask(field, update, id){

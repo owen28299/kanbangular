@@ -8,6 +8,10 @@ const express   = require('express'),
 router.route('/')
   .get(function (req, res) {
     res.send(taskModel.getTasks());
+  })
+  .post(function(req,res){
+    var newTask = taskModel.addTask(req.body);
+    res.json(newTask);
   });
 
   module.exports = router;
