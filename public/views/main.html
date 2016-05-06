@@ -26,7 +26,7 @@
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
         <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="TaskService.changeTask('title',titleText,task.id); toggle(editMode)">
+        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
         <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
       </div>
     </li>
@@ -34,12 +34,12 @@
       <div ng-init="editModeDes.value=false">
         <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
         <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
     </li>
     <li>
-      <button ng-click="TaskService.changeTask('status','doing',task.id)">></button>
+      <button ng-click="changeTask('status','doing',task.id)">></button>
     </li>
   </ul>
 </div>
@@ -50,7 +50,7 @@
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
         <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="TaskService.changeTask('title',titleText,task.id); toggle(editMode)">
+        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
         <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
       </div>
     </li>
@@ -58,13 +58,13 @@
       <div ng-init="editModeDes.value=false">
         <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
         <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
     </li>
     <li>
-      <button ng-click="TaskService.changeTask('status','todo',task.id)"><</button>
-      <button ng-click="TaskService.changeTask('status','done',task.id)">></button>
+      <button ng-click="changeTask('status','todo',task.id)"><</button>
+      <button ng-click="changeTask('status','done',task.id)">></button>
     </li>
   </ul>
 </div>
@@ -75,7 +75,7 @@
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
         <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="TaskService.changeTask('title',titleText,task.id); toggle(editMode)">
+        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
         <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
       </div>
     </li>
@@ -83,12 +83,12 @@
       <div ng-init="editModeDes.value=false">
         <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
         <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="TaskService.changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
         <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
       </div>
     </li>
     <li>
-      <button ng-click="TaskService.changeTask('status','doing',task.id)"><</button>
+      <button ng-click="changeTask('status','doing',task.id)"><</button>
     </li>
   </ul>
 </div>
