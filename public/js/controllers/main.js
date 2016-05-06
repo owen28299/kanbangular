@@ -14,7 +14,15 @@
 
       $scope.addTask = function(task) {
         TaskService.addTask(task).then(function(response){
-          $scope.tasks.push(response.data);
+          var newTask = response.data;
+
+          var nextId = $scope.tasks.reduce(function(highest, task){
+              return Math.max(task.id, highest);
+            }, 0) + 1;
+
+          newTask.id = nextId;
+
+          $scope.tasks.push(newTask);
         });
       };
 

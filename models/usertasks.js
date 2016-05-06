@@ -3,14 +3,12 @@ module.exports = function(sequelize, DataTypes) {
   var UserTasks = sequelize.define('UserTasks', {
     userId: {
       type: DataTypes.INTEGER,
-      references: 'User',
-      referencesKey: 'id',
+      references: {model: "User", key: "id"},
       allowNull: false
     },
     taskId: {
       type: DataTypes.INTEGER,
-      references: 'Task',
-      referencesKey: 'id',
+      references: {model: "User", key: "id"},
       allowNull: false
     }
   }, {
