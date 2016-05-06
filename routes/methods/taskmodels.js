@@ -39,6 +39,7 @@ function taskModel(){
 
       var change = {};
       change[field] = update;
+      change.updatedAt = new Date();
 
       Task.update(change, {
         where : {

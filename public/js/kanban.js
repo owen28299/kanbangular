@@ -18,6 +18,10 @@
         .when('/', {
           templateUrl : 'views/main.html',
           controller  : 'MainController'
+        })
+        .when('/signup', {
+          templateUrl : 'views/signup.html',
+          controller  : 'SignUpController'
         });
 
     }])
