@@ -24,10 +24,10 @@
   <ul ng-repeat="task in TaskService.getTasks() | filter:task.status='todo'">
     <li>
       <div ng-init="editMode.value=false">
-        <p ng-hide="editMode.value">{{task.title}}</p>
-        <input type="text" ng-show="editMode.value">
-        <button ng-click="toggle(editMode)">
-        {{editMode.value}}
+        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+        <input type="text" value="{{task.title}}" ng-show="editMode.value">
+        <input type="submit" ng-show="editMode.value">
+        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
       </div>
     </li>
     <li>
