@@ -22,6 +22,10 @@
 <div id="todo">
   <h2>To Do</h2>
   <ul ng-repeat="task in tasks | filter:task.status='todo'">
+    <div class="task">
+    <li>
+      <button ng-click="deleteTask(task.id)">Delete Task</button>
+    </li>
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -54,11 +58,13 @@
       </select>
       <button ng-click="addUserTask(this_user,task.id)">Assign</button>
     </li>
+    </div>
   </ul>
 </div>
 <div id="doing">
   <h2>Doing</h2>
   <ul ng-repeat="task in tasks | filter:task.status='doing'">
+    <div class="task">
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -92,11 +98,13 @@
       </select>
       <button ng-click="addUserTask(this_user,task.id)">Assign</button>
     </li>
+    </div>
   </ul>
 </div>
 <div id="done">
   <h2>Done</h2>
   <ul ng-repeat="task in tasks | filter:task.status='done'">
+    <div class="task">
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -129,6 +137,7 @@
       </select>
       <button ng-click="addUserTask(this_user,task.id)">Assign</button>
     </li>
+    </div>
   </ul>
 </div>
 </div>

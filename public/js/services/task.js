@@ -45,6 +45,10 @@
       return $http.put('/task', data, config);
     };
 
+    this.deleteTask = function(task_id){
+      return $http.delete('/task/' + task_id);
+    };
+
   }]);
 
 })();

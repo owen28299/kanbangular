@@ -31,5 +31,13 @@ router.route('/')
   })
   ;
 
+router.route('/:id')
+  .delete(function(req,res){
+    taskModel.deleteTask(req.params.id, function(tasks){
+      res.send(tasks);
+    });
+
+  });
+
 module.exports = router;
 

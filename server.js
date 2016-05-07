@@ -16,6 +16,13 @@ app.use(express.static('public'));
 app.use('/task', taskRoute);
 app.use('/user', userRoute);
 
+app.get('*', function(req, res){
+  res.sendFile('./public/index.html',
+              {
+                root  : __dirname
+              });
+});
+
 app.listen(PORT, function(){
   db.sequelize.sync();
   console.log(`Server listening on port ${PORT}`);
