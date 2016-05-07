@@ -48,10 +48,30 @@ function taskModel(){
 
     }
 
+    function deleteTask(task_id, callback){
+      Task.destroy({
+        where : {
+          id : task_id
+        }
+      })
+      .then(function(){
+        Task.findAll().then(function(tasks){
+          var allTasks = [];
+
+          tasks.forEach(function(element){
+            allTasks.push(element.dataValues);
+          });
+
+          callback(allTasks);
+        });
+      });
+    }
+
     return {
       getTasks : getTasks,
       addTask : addTask,
-      changeTask : changeTask
+      changeTask : changeTask,
+      deleteTask : deleteTask
     };
 
 

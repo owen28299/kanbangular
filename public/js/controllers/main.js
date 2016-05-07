@@ -41,5 +41,11 @@
         }
       };
 
+      $scope.deleteTask = function(task_id){
+        TaskService.deleteTask(task_id).then(function(response){
+          $scope.tasks = response.data;
+        });
+      };
+
     }]);
 })();

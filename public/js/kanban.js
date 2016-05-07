@@ -26,6 +26,9 @@
         .when('/tasks', {
           templateUrl : 'views/tasks.html',
           controller  : 'UserController'
+        })
+        .otherwise({
+          templateUrl : 'views/404.html'
         });
 
     }])

@@ -23,6 +23,9 @@
   <h2>To Do</h2>
   <ul ng-repeat="task in tasks | filter:task.status='todo'">
     <li>
+      <button ng-click="deleteTask(task.id)">Delete Task</button>
+    </li>
+    <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
         <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
