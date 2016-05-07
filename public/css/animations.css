@@ -21,25 +21,36 @@ div#container {
   align-content: stretch;
   border: 1px solid black;
   font-size: .60em;
+  padding: 1em;
+  /*font-family: Helvetica;*/
 }
 
 div#todo {
   width: 20%;
   border: 1px solid black;
-  /*border-spacing: 15px;*/
+  padding: 1em;
 }
 
 div#doing {
   width: 20%;
   border: 1px solid black;
+  padding: 1em;
+
 }
 
 div#done {
   width: 20%;
   border: 1px solid black;
-
+  padding: 1em;
 }
 
 div#addtask {
   width: 20%;
+}
+
+.task {
+  border: 1px solid black;
+  padding: 1em;
+  margin-right: 3em;
+  background-color: #e5edfe;
 }
