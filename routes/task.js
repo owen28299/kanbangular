@@ -21,8 +21,14 @@ router.route('/')
     });
   })
   .post(function(req,res){
-    taskModel.addTask(req.body, function(newTask){
-      res.json(newTask);
+    taskModel.addTask(req.body, function(tasks){
+      var allTasks = [];
+
+      tasks.forEach(function(element){
+        allTasks.push(element.dataValues);
+      });
+
+      res.send(allTasks);
     });
   })
   .put(function(req,res){

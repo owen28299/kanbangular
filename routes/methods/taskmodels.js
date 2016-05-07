@@ -19,9 +19,9 @@ function taskModel(){
       };
 
       Task.create(newTask).then(function(){
-        //find the task that was JUST added
-        //perhaps find by created date?
-        //Alternatively, try to get the correct id before adding in
+        Task.findAll().then(function(response){
+          callback(response);
+        });
       });
     }
 
