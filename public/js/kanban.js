@@ -22,6 +22,10 @@
         .when('/signup', {
           templateUrl : 'views/signup.html',
           controller  : 'UserController'
+        })
+        .when('/tasks', {
+          templateUrl : 'views/tasks.html',
+          controller  : 'UserController'
         });
 
     }])

@@ -1,12 +1,12 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
   var UserTasks = sequelize.define('UserTasks', {
-    userId: {
+    UserId: {
       type: DataTypes.INTEGER,
       references: {model: "User", key: "id"},
       allowNull: false
     },
-    taskId: {
+    TaskId: {
       type: DataTypes.INTEGER,
       references: {model: "User", key: "id"},
       allowNull: false

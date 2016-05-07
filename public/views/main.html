@@ -74,10 +74,11 @@
       <button ng-click="changeTask('status','done',task.id)">></button>
     </li>
     <li ng-controller="UserController">
-      <select>
+      <select ng-model="user_id">
         <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="user.first_name">{{user.first_name}}</option>
+        <option ng-repeat="user in users" value="{{user.id}}">{{user.first_name}}</option>
       </select>
+      <button ng-click="addUserTask(user_id,task.id)">Assign: {{user_id}} to task: {{task.id}}</button>
     </li>
   </ul>
 </div>
@@ -104,10 +105,11 @@
       <button ng-click="changeTask('status','doing',task.id)"><</button>
     </li>
     <li ng-controller="UserController">
-      <select>
+      <select ng-model="user_id">
         <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="user.first_name">{{user.first_name}}</option>
+        <option ng-repeat="user in users" value="{{user.id}}">{{user.first_name}}</option>
       </select>
+      <button ng-click="addUserTask(user_id,task.id)">Assign: {{user_id}} to task: {{task.id}}</button>
     </li>
   </ul>
 </div>

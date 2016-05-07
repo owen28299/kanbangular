@@ -25,4 +25,27 @@ router.route('/')
   })
   ;
 
+router.route('/:name')
+  .get(function(req,res){
+    userModel.getUser(req.params.name).then(function(response){
+      res.send(response);
+    });
+  });
+
+router.route('/usertask')
+  .post(function(req,res){
+    userModel.addUserTask(req.body.user_id, req.body.task_id);
+    res.send(req.body);
+  })
+  ;
+
+router.route('/usertask/:id')
+  .get(function(req,res){
+    userModel.getUserTasks(req.params.id, function(response){
+      res.send(response);
+    });
+
+  });
+
+
 module.exports = router;

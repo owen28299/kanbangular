@@ -1,6 +1,8 @@
 'use strict';
 const db = require('../../models'),
-      User = db.User
+      User = db.User,
+      UserTask = db.UserTasks,
+      Task = db.Task
       ;
 
 function userModel(){
@@ -17,14 +19,60 @@ function userModel(){
     return(newUser);
   }
 
-
   function getUsers(){
     return User.findAll();
   }
 
+  function getUser(user_name){
+    return User.findOne({
+      where: {
+        first_name : user_name
+      }
+    });
+  }
+
+  function addUserTask(user_id, task_id){
+    var newUserTask = {
+      UserId : user_id,
+      TaskId : task_id
+    };
+
+    UserTask.create(newUserTask);
+
+  }
+
+  function getUserTasks(user_id, callback){
+    UserTask.findAll({
+      attributes: ['TaskId'],
+      where : {
+        UserId : user_id
+      }
+    }).then(function(response){
+      var taskQuery = [];
+
+      response.forEach(function(element){
+        taskQuery.push({
+          id : element.TaskId
+        });
+      });
+
+      Task.findAll({
+        where : {
+          $or : taskQuery
+        }
+      }).then(function(response){
+        callback(response);
+      });
+
+    });
+  }
+
   return {
-    addUser  : addUser,
-    getUsers : getUsers
+    addUser      : addUser,
+    getUsers     : getUsers,
+    getUser      : getUser,
+    addUserTask  : addUserTask,
+    getUserTasks : getUserTasks
   };
 
 }

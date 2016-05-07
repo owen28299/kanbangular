@@ -27,6 +27,35 @@
           });
         };
 
+        this.getUser = function(name){
+          return $http({
+            method: "GET",
+            url : '/user/' + name
+          });
+        };
+
+
+        this.addUserTask = function(user_id, task_id){
+          var data = {
+            user_id : user_id,
+            task_id : task_id
+          };
+
+          var config = {
+            headers : {
+              'Content-Type': 'application/json'
+            }
+          };
+
+          return $http.post('/user/usertask', data, config);
+        };
+
+        this.getUserTasks = function(user_id){
+          return $http({
+            method: "GET",
+            url : '/user/usertask/' + user_id
+          });
+        };
 
     }]);
 
