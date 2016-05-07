@@ -57,6 +57,13 @@
           });
         };
 
+        this.getTaskUsers = function(task_id){
+          return $http({
+            method: "GET",
+            url : '/user/taskuser/' + task_id
+          });
+        };
+
     }]);
 
 })();

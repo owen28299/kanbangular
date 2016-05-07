@@ -17,9 +17,9 @@
         $scope.users = response.data;
       });
 
-      $scope.addUserTask = function(user_id, task_id){
-        UserService.addUserTask(user_id, task_id).then(function(response){
-          console.log(response);
+      $scope.addUserTask = function(user, task_id){
+        UserService.addUserTask(JSON.parse(user).id, task_id).then(function(response){
+          $scope.taskusers.push(JSON.parse(user));
         });
       };
 
@@ -48,6 +48,13 @@
           });
 
         }
+      };
+
+      $scope.taskusers = [];
+      $scope.findTaskUsers = function(task_id){
+        UserService.getTaskUsers(task_id).then(function(response){
+          $scope.taskusers = response.data;
+        });
       };
 
     }]);

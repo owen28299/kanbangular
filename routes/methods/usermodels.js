@@ -67,12 +67,39 @@ function userModel(){
     });
   }
 
+  function getTaskUsers(task_id, callback){
+    UserTask.findAll({
+      attributes: ['UserId'],
+      where : {
+        TaskId : task_id
+      }
+    }).then(function(response){
+      var userQuery = [];
+
+      response.forEach(function(element){
+        userQuery.push({
+          id : element.UserId
+        });
+      });
+
+      User.findAll({
+        where : {
+          $or : userQuery
+        }
+      }).then(function(response){
+        callback(response);
+      });
+
+    });
+  }
+
   return {
     addUser      : addUser,
     getUsers     : getUsers,
     getUser      : getUser,
     addUserTask  : addUserTask,
-    getUserTasks : getUserTasks
+    getUserTasks : getUserTasks,
+    getTaskUsers : getTaskUsers
   };
 
 }

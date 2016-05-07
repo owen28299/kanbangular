@@ -41,12 +41,18 @@
     <li>
       <button ng-click="changeTask('status','doing',task.id)">></button>
     </li>
-    <li ng-controller="UserController">
-      <select ng-model="user_id">
+    <li ng-controller="UserController" ng-init="findTaskUsers(task.id)">
+      <p>Assignees: </p>
+      <ul ng-repeat="tuser in taskusers">
+        <li>
+          {{tuser.first_name}}
+        </li>
+      </ul>
+      <select ng-model="this_user">
         <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="{{user.id}}">{{user.first_name}}</option>
+        <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
       </select>
-      <button ng-click="addUserTask(user_id,task.id)">Assign: {{user_id}} to task: {{task.id}}</button>
+      <button ng-click="addUserTask(this_user,task.id)">Assign</button>
     </li>
   </ul>
 </div>
