@@ -44,8 +44,13 @@ router.route('/usertask/:id')
     userModel.getUserTasks(req.params.id, function(response){
       res.send(response);
     });
-
   });
 
+router.route('/taskuser/:id')
+  .get(function(req,res){
+    userModel.getTaskUsers(req.params.id, function(response){
+      res.send(response);
+    });
+  });
 
 module.exports = router;
