@@ -1,3 +1,25 @@
 ul {
   list-style-type: none;
 }
+
+div#container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: stretch;
+  border: 1px solid black;
+}
+
+div#todo {
+  width: 25%;
+}
+
+div#doing {
+  width: 25%;
+}
+
+div#done {
+  width: 25%;
+}
