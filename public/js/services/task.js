@@ -12,7 +12,7 @@
       });
     };
 
-    this.addTask = function(task){
+    this.addTask = function(task, callback){
       var data = {
         title : task.title,
         description : task.description,
@@ -25,7 +25,9 @@
         }
       };
 
-      return $http.post('/task', data, config);
+      $http.post('/task', data, config).then(function(response){
+        callback(response.data);
+      });
 
     };
 

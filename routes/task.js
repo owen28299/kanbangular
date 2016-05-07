@@ -21,8 +21,9 @@ router.route('/')
     });
   })
   .post(function(req,res){
-    var newTask = taskModel.addTask(req.body);
-    res.json(newTask);
+    taskModel.addTask(req.body, function(newTask){
+      res.json(newTask);
+    });
   })
   .put(function(req,res){
     taskModel.changeTask(req.body.field, req.body.update, req.body.id, function(tasks){

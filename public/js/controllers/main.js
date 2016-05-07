@@ -13,17 +13,18 @@
       });
 
       $scope.addTask = function(task) {
-        TaskService.addTask(task).then(function(response){
-          var newTask = response.data;
-
-          var nextId = $scope.tasks.reduce(function(highest, task){
-              return Math.max(task.id, highest);
-            }, 0) + 1;
-
-          newTask.id = nextId;
-
+        TaskService.addTask(task, function(newTask){
           $scope.tasks.push(newTask);
         });
+
+
+          // var nextId = $scope.tasks.reduce(function(highest, task){
+          //     return Math.max(task.id, highest);
+          //   }, 0) + 1;
+
+          // newTask.id = nextId;
+
+
       };
 
       $scope.changeTask = function(field, update, id) {
