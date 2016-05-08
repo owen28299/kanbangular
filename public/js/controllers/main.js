@@ -18,9 +18,6 @@
       $scope.addTask = function(task) {
         TaskService.addTask(task, function(tasks){
           $scope.tasks = tasks;
-        })
-        .catch(function(){
-        $window.location.href = '/login';
         });
       }
       ;
