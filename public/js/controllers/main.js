@@ -18,12 +18,19 @@
       $scope.addTask = function(task) {
         TaskService.addTask(task, function(tasks){
           $scope.tasks = tasks;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
-      };
+      }
+      ;
 
       $scope.changeTask = function(field, update, id) {
         TaskService.changeTask(field,update,id).then(function(response){
           $scope.tasks = response.data;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
       };
 
@@ -39,6 +46,9 @@
       $scope.deleteTask = function(task_id){
         TaskService.deleteTask(task_id).then(function(response){
           $scope.tasks = response.data;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
       };
 

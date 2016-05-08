@@ -30,7 +30,7 @@ app.use(passport.session());
 
 
 app.use(express.static('public'));
-app.use('/task', isAuthenticated, taskRoute);
+app.use('/task', taskRoute);
 app.use('/user', userRoute);
 
 passport.use(new LocalStrategy(
@@ -68,6 +68,15 @@ app.post('/login', passport.authenticate('local'), function(req,res){
   delete details.password;
 
   res.send(details);
+});
+
+app.get('/logout', function(req, res) {
+  req.logout();
+  res.send('Successfully logged out');
+});
+
+app.get('/ping', isAuthenticated, function(req,res){
+  res.send("logged in");
 });
 
 app.get('*', function(req, res){

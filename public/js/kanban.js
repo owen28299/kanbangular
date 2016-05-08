@@ -36,9 +36,25 @@
         });
 
     }])
-    .run(['$window', '$rootScope', function($window, $rootScope){
+    .run(['$window', '$rootScope', '$http',
+    function($window, $rootScope, $http){
       var currUser = JSON.parse($window.sessionStorage.getItem('user'));
       $rootScope.currUser =  currUser;
+
+      $http.get('/ping').then(function(){
+        console.log("Logged in as " + currUser.username);
+      })
+      .catch(function(){
+        $rootScope.currUser =  {
+          first_name : "Guest"
+        };
+      });
+
+      $rootScope.logout = function(){
+        $http.get('/logout').then(function(){
+          $window.location.href = "/login";
+        });
+      };
     }]);
 
 })();
