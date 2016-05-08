@@ -27,13 +27,18 @@
           templateUrl : 'views/tasks.html',
           controller  : 'UserController'
         })
+        .when('/login', {
+          templateUrl : 'views/login.html',
+          controller  : 'LoginController'
+        })
         .otherwise({
           templateUrl : 'views/404.html'
         });
 
     }])
-    .run([function(){
-
+    .run(['$window', '$rootScope', function($window, $rootScope){
+      var currUser = JSON.parse($window.sessionStorage.getItem('user'));
+      $rootScope.currUser =  currUser;
     }]);
 
 })();

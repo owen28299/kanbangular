@@ -7,7 +7,9 @@
         this.addUser = function(user){
           var data = {
             first_name : user.fname,
-            last_name : user.lname
+            last_name : user.lname,
+            username : user.username,
+            password : user.password
           };
 
           var config = {

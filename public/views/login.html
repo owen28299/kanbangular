@@ -1,0 +1,14 @@
+<h1>{{currUser.first_name}}</h1>
+<form>
+  <div>
+    <label for="username">Username</label>
+    <input type="text" id="username" ng-model="user.username">
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" id="password" ng-model="user.password">
+  </div>
+  <div>
+    <button ng-click="login(user)">Login</button>
+  </div>
+</form>

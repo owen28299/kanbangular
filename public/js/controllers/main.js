@@ -2,14 +2,17 @@
 
 (function(){
   angular.module('kanban')
-    .controller('MainController', ['$scope', '$http', 'TaskService',
-    function($scope, $http, TaskService){
+    .controller('MainController', ['$scope', '$http', 'TaskService', '$window',
+    function($scope, $http, TaskService, $window){
 
       $scope.name = "KanBangular";
 
       $scope.tasks = [];
       TaskService.getTasks().then(function(response){
         $scope.tasks = response.data;
+      })
+      .catch(function(){
+        $window.location.href = '/login';
       });
 
       $scope.addTask = function(task) {

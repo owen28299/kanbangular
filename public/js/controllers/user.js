@@ -7,9 +7,7 @@
       $scope.signup = "Sign Up Now!!!";
 
       $scope.addUser = function(user){
-        UserService.addUser(user).then(function(response){
-          console.log(response.data);
-        });
+        UserService.addUser(user);
       };
 
       $scope.users = [];
