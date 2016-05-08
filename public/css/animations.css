@@ -3,6 +3,16 @@ body {
   background-size: cover;
 }
 
+nav {
+  display: flex;
+  flex direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  align-content: stretch;
+  background-color: rgba(0, 255, 255, 0.2);
+}
+
 #pageTitle {
   font-family: 'Rock Salt', cursive;
   font-size: 270%;
@@ -18,7 +28,13 @@ body {
   font-size: 125%;
 }
 
-.ng-enter {
+.navWording {
+  font-family: 'Caveat', cursive;
+  font-size: 125%;
+  font-weight: 900em;
+}
+
+/*.ng-enter {
   transition-delay: 0.5s;
   transition:0.5s linear all;
   opacity:0;
@@ -26,7 +42,7 @@ body {
 .ng-enter.ng-enter-active {
   transition-delay: 0.5s;
   opacity:1;
-}
+}*/
 
 ul {
   list-style-type: none;
@@ -43,6 +59,7 @@ div#container {
   font-size: .60em;
   padding: 1em;
   border-radius: 8px;
+  box-shadow: 8px 8px 3px #888888;
 }
 
 div#todo {
@@ -111,4 +128,8 @@ button.form {
 }
 button.form:hover {
   background-color: #0099FF;
+}
+
+.dropdown:hover {
+
 }

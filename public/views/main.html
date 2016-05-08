@@ -32,7 +32,6 @@
           <div ng-hide="true">!{{task.id}}!</div>
 
           <button ng-click="deleteTask(task.id)">Delete Task</button>
-
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
             <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
@@ -57,10 +56,10 @@
             </p>
           </div>
           <select ng-model="this_user">
-            <option selected disabled>Assign User</option>
+            <option selected disabled class="dropdown">Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
@@ -104,7 +103,7 @@
             <option selected disabled>Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
@@ -146,7 +145,7 @@
             <option selected disabled>Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
