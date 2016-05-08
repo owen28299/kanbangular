@@ -1,6 +1,7 @@
 'use strict';
 const db = require('../../models'),
-      Task = db.Task
+      Task = db.Task,
+      UserTask = db.UserTasks
       ;
 
 function taskModel(){
@@ -9,7 +10,7 @@ function taskModel(){
       return Task.findAll();
     }
 
-    function addTask(task){
+    function addTask(task, callback){
 
       var newTask = {
         title : task.title,
@@ -17,9 +18,11 @@ function taskModel(){
         status : task.status
       };
 
-      Task.create(newTask);
-
-      return(newTask);
+      Task.create(newTask).then(function(){
+        Task.findAll().then(function(response){
+          callback(response);
+        });
+      });
     }
 
     function changeTask(field, update, id, callback){
@@ -64,6 +67,13 @@ function taskModel(){
 
           callback(allTasks);
         });
+
+        UserTask.destroy({
+          where : {
+            TaskId : task_id
+          }
+        });
+
       });
     }
 

@@ -27,13 +27,34 @@
           templateUrl : 'views/tasks.html',
           controller  : 'UserController'
         })
+        .when('/login', {
+          templateUrl : 'views/login.html',
+          controller  : 'LoginController'
+        })
         .otherwise({
           templateUrl : 'views/404.html'
         });
 
     }])
-    .run([function(){
+    .run(['$window', '$rootScope', '$http',
+    function($window, $rootScope, $http){
+      var currUser = JSON.parse($window.sessionStorage.getItem('user'));
+      $rootScope.currUser =  currUser;
 
+      $http.get('/ping').then(function(){
+        console.log("Logged in as " + currUser.username);
+      })
+      .catch(function(){
+        $rootScope.currUser =  {
+          first_name : "Guest"
+        };
+      });
+
+      $rootScope.logout = function(){
+        $http.get('/logout').then(function(){
+          $window.location.href = "/login";
+        });
+      };
     }]);
 
 })();

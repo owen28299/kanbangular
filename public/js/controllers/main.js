@@ -2,33 +2,35 @@
 
 (function(){
   angular.module('kanban')
-    .controller('MainController', ['$scope', '$http', 'TaskService',
-    function($scope, $http, TaskService){
+    .controller('MainController', ['$scope', '$http', 'TaskService', '$window',
+    function($scope, $http, TaskService, $window){
 
       $scope.name = "KanBangular";
 
       $scope.tasks = [];
       TaskService.getTasks().then(function(response){
         $scope.tasks = response.data;
+      })
+      .catch(function(){
+        $window.location.href = '/login';
       });
 
       $scope.addTask = function(task) {
-        TaskService.addTask(task).then(function(response){
-          var newTask = response.data;
-
-          var nextId = $scope.tasks.reduce(function(highest, task){
-              return Math.max(task.id, highest);
-            }, 0) + 1;
-
-          newTask.id = nextId;
-
-          $scope.tasks.push(newTask);
+        TaskService.addTask(task, function(tasks){
+          $scope.tasks = tasks;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
-      };
+      }
+      ;
 
       $scope.changeTask = function(field, update, id) {
         TaskService.changeTask(field,update,id).then(function(response){
           $scope.tasks = response.data;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
       };
 
@@ -44,6 +46,9 @@
       $scope.deleteTask = function(task_id){
         TaskService.deleteTask(task_id).then(function(response){
           $scope.tasks = response.data;
+        })
+        .catch(function(){
+        $window.location.href = '/login';
         });
       };
 

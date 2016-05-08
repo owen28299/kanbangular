@@ -1,4 +1,7 @@
 <h1 id=pageTitle>{{name}}</h1>
+
+<h2>Welcome: {{currUser.first_name}}</h2>
+
 <div id="container">
 <form>
   <div id="addtask">
@@ -70,6 +73,9 @@
   <ul ng-repeat="task in tasks | filter:task.status='doing'">
     <div class="task">
     <li>
+      <button ng-click="deleteTask(task.id)">Delete Task</button>
+    </li>
+    <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
         <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
@@ -110,6 +116,9 @@
   <h2>Done</h2>
   <ul ng-repeat="task in tasks | filter:task.status='done'">
     <div class="task">
+    <li>
+      <button ng-click="deleteTask(task.id)">Delete Task</button>
+    </li>
     <li>
       <div ng-init="editMode.value=false">
         <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>

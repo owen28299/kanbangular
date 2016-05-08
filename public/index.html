@@ -10,8 +10,10 @@
 
   <nav>
     <a href="/">Main Board</a>
-    <a href="/signup">Sign Up</a>
     <a href="/tasks">Tasks</a>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+    <button ng-click="logout()">Logout</button>
   </nav>
 
   <div ng-view></div>
@@ -23,7 +25,9 @@
   <script type="text/javascript" src="/js/kanban.js"></script>
   <script type="text/javascript" src="/js/controllers/main.js"></script>
   <script type="text/javascript" src="/js/controllers/user.js"></script>
+  <script type="text/javascript" src="/js/controllers/login.js"></script>
   <script type="text/javascript" src="/js/services/task.js"></script>
   <script type="text/javascript" src="/js/services/user.js"></script>
+  <script type="text/javascript" src="/js/services/login.js"></script>
 </body>
 </html>
