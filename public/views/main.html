@@ -28,6 +28,9 @@
   <h2 id="pageWording">To Do</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='todo'" class="task">
+
+          <div ng-hide="true">!{{task.id}}!</div>
+
           <button ng-click="deleteTask(task.id)">Delete Task</button>
 
           <div ng-init="editMode.value=false">
@@ -68,6 +71,9 @@
   <h2 id="pageWording">Doing</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='doing'" class="task">
+
+          <div ng-hide="true">!{{task.id}}!</div>
+
           <button ng-click="deleteTask(task.id)">Delete Task</button>
 
           <div ng-init="editMode.value=false">
@@ -108,6 +114,9 @@
   <h2 id="pageWording">Done</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='done'" class="task">
+
+          <div ng-hide="true">!{{task.id}}!</div>
+
           <button ng-click="deleteTask(task.id)">Delete Task</button>
 
           <div ng-init="editMode.value=false">
