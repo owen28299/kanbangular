@@ -1,31 +1,31 @@
 <h1 id=pageTitle>{{name}}</h1>
 
-<h2>Welcome: {{currUser.first_name}}</h2>
+<h3 id="pageWording">Welcome: {{currUser.first_name}}</h3>
 
 <div id="container">
 <form>
   <div id="addtask">
   <div>
-    <label for="Title">Task</label>
+    <label for="Title" id="pageWording">Task</label>
     <input type="text" id="Title" ng-model="newTask.title" size="30" class="style-1">
   </div><br>
   <div>
-    <label for="Description">Description</label>
+    <label for="Description" id="pageWording">Description</label>
     <input type="text" id="Description" ng-model="newTask.description" size="30" class="style-1">
   </div><br>
   <div>
-    <label for="Status">Status</label>
+    <label for="Status" id="pageWording">Status</label>
     <input type="text" id="Status" ng-model="newTask.status" size="30" class="style-1">
   </div>
   </div><br>
   <div>
-    <button ng-click="addTask(newTask)">Add Task</button>
+    <button ng-click="addTask(newTask)" class="form">Add Task</button>
   </div>
 </form>
 
 
 <div id="todo">
-  <h2>To Do</h2>
+  <h2 id="pageWording">To Do</h2>
   <ul ng-repeat="task in tasks | filter:task.status='todo'">
     <div class="task">
     <li>
@@ -69,7 +69,7 @@
 
 
 <div id="doing">
-  <h2>Doing</h2>
+  <h2 id="pageWording">Doing</h2>
   <ul ng-repeat="task in tasks | filter:task.status='doing'">
     <div class="task">
     <li>
@@ -113,7 +113,7 @@
 </div>
 
 <div id="done">
-  <h2>Done</h2>
+  <h2 id="pageWording">Done</h2>
   <ul ng-repeat="task in tasks | filter:task.status='done'">
     <div class="task">
     <li>
