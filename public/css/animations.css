@@ -133,3 +133,19 @@ button.form:hover {
 .dropdown:hover {
 
 }
+
+
+div#newtask_form {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+}
+
+#addtask_form {
+  padding: 20px;
+  max-width: 255px;
+}
+
+#main_addtask{
+  margin-bottom: 20px;
+}
