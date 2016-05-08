@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/owen28299/kanbangular#readme",
   "dependencies": {
+
+    "angular-dragula": "^1.2.6",
     "bcrypt-nodejs": "0.0.3",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",

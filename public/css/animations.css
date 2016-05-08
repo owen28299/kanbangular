@@ -1,3 +1,13 @@
+body {
+  background-image: url('./assets/background.png');
+  background-size: cover;
+}
+
+h1#pageTitle {
+  font-family: 'Rock Salt', cursive;
+}
+
+
 .ng-enter {
   transition-delay: 0.5s;
   transition:0.5s linear all;
@@ -19,27 +29,64 @@ div#container {
   justify-content: space-between;
   align-items: flex-start;
   align-content: stretch;
-  border: 1px solid black;
+  border: 3px solid black;
   font-size: .60em;
+  padding: 1em;
+  border-radius: 8px;
 }
 
 div#todo {
-  width: 20%;
-  border: 1px solid black;
-  /*border-spacing: 15px;*/
+  width: 21%;
+  border: 2px solid black;
+  padding: 1em;
+  box-shadow: 8px 8px 3px #888888;
 }
 
 div#doing {
-  width: 20%;
-  border: 1px solid black;
+  width: 21%;
+  border: 2px solid black;
+  padding: 1em;
+  box-shadow: 8px 8px 3px #888888;
+
 }
 
 div#done {
-  width: 20%;
-  border: 1px solid black;
-
+  width: 21%;
+  border: 2px solid black;
+  padding: 1em;
+  box-shadow: 8px 8px 3px #888888;
 }
 
 div#addtask {
-  width: 20%;
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.task {
+  border: 1px solid black;
+  padding: 1em;
+  margin-right: 3em;
+  background-image: url('./assets/crumpled-paper.jpg');
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: gray;
+}
+
+.style-1 input[type="text"] {
+  padding: 10px;
+  border: solid 7px #c9c9c9;
+  box-shadow: inset 0 0 0 2px #707070;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+.style-1 input[type="text"]:focus,
+.style-1 input[type="text"].focus {
+  border: solid 10px #969696;
 }
