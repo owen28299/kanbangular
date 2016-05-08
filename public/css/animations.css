@@ -5,6 +5,7 @@ body {
 
 #pageTitle {
   font-family: 'Rock Salt', cursive;
+  font-size: 270%;
 }
 
 #pageWording {
@@ -57,7 +58,7 @@ div#doing {
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
-
+  background-color: #66CCFF;
 }
 
 div#done {
@@ -65,6 +66,7 @@ div#done {
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
+  background-color: #66CCFF;
 }
 
 div#addtask {

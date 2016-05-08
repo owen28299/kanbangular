@@ -1,6 +1,6 @@
 <h1 id=pageTitle>{{name}}</h1>
 
-<h3 id="pageWording">Welcome: {{currUser.first_name}}</h3>
+<h2 id="pageWording">Welcome: {{currUser.first_name}}</h2>
 
 <div id="container">
 <form>
@@ -26,132 +26,119 @@
 
 <div id="todo">
   <h2 id="pageWording">To Do</h2>
-  <ul ng-repeat="task in tasks | filter:task.status='todo'">
-    <div class="task">
-    <li>
-      <button ng-click="deleteTask(task.id)">Delete Task</button>
-    </li>
-    <li>
-      <div ng-init="editMode.value=false">
-        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
-        <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
-        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+  <div dragula="'task-item'">
+      <div ng-repeat="task in tasks | filter:task.status='todo'" class="task">
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
+
+          <div ng-init="editMode.value=false">
+            <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+            <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
+            <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
+            <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+          </div>
+
+          <div ng-init="editModeDes.value=false">
+            <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+            <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+          </div>
+
+          <button ng-click="changeTask('status','doing',task.id)">></button>
+
+        <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
+          <p>Assignees: </p>
+          <div ng-repeat="tuser in taskusers">
+            <p>
+              {{tuser.first_name}}
+            </p>
+          </div>
+          <select ng-model="this_user">
+            <option selected disabled>Assign User</option>
+            <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
+          </select>
+          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+        </div>
       </div>
-    </li>
-    <li>
-      <div ng-init="editModeDes.value=false">
-        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
-        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
-        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
-      </div>
-    </li>
-    <li>
-      <button ng-click="changeTask('status','doing',task.id)">></button>
-    </li>
-    <li ng-controller="UserController" ng-init="findTaskUsers(task.id)">
-      <p>Assignees: </p>
-      <ul ng-repeat="tuser in taskusers">
-        <li>
-          {{tuser.first_name}}
-        </li>
-      </ul>
-      <select ng-model="this_user">
-        <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
-      </select>
-      <button ng-click="addUserTask(this_user,task.id)">Assign</button>
-    </li>
-    </div>
-  </ul>
+  </div>
 </div>
 
 
 <div id="doing">
   <h2 id="pageWording">Doing</h2>
-  <ul ng-repeat="task in tasks | filter:task.status='doing'">
-    <div class="task">
-    <li>
-      <button ng-click="deleteTask(task.id)">Delete Task</button>
-    </li>
-    <li>
-      <div ng-init="editMode.value=false">
-        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
-        <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
-        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+  <div dragula="'task-item'">
+      <div ng-repeat="task in tasks | filter:task.status='doing'" class="task">
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
+
+          <div ng-init="editMode.value=false">
+            <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+            <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
+            <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
+            <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+          </div>
+
+          <div ng-init="editModeDes.value=false">
+            <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+            <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+          </div>
+
+          <button ng-click="changeTask('status','todo',task.id)"><</button>
+          <button ng-click="changeTask('status','done',task.id)">></button>
+
+        <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
+          <p>Assignees: </p>
+          <div ng-repeat="tuser in taskusers">
+            <p>
+              {{tuser.first_name}}
+            </p>
+          </div>
+          <select ng-model="this_user">
+            <option selected disabled>Assign User</option>
+            <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
+          </select>
+          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+        </div>
       </div>
-    </li>
-    <li>
-      <div ng-init="editModeDes.value=false">
-        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
-        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
-        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
-      </div>
-    </li>
-    <li>
-      <button ng-click="changeTask('status','todo',task.id)"><</button>
-      <button ng-click="changeTask('status','done',task.id)">></button>
-    </li>
-    <li ng-controller="UserController" ng-init="findTaskUsers(task.id)">
-      <p>Assignees: </p>
-      <ul ng-repeat="tuser in taskusers">
-        <li>
-          {{tuser.first_name}}
-        </li>
-      </ul>
-      <select ng-model="this_user">
-        <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
-      </select>
-      <button ng-click="addUserTask(this_user,task.id)">Assign</button>
-    </li>
-    </div>
-  </ul>
+  </div>
 </div>
 
 <div id="done">
   <h2 id="pageWording">Done</h2>
-  <ul ng-repeat="task in tasks | filter:task.status='done'">
-    <div class="task">
-    <li>
-      <button ng-click="deleteTask(task.id)">Delete Task</button>
-    </li>
-    <li>
-      <div ng-init="editMode.value=false">
-        <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
-        <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-        <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
-        <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+  <div dragula="'task-item'">
+      <div ng-repeat="task in tasks | filter:task.status='done'" class="task">
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
+
+          <div ng-init="editMode.value=false">
+            <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
+            <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
+            <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
+            <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+          </div>
+
+          <div ng-init="editModeDes.value=false">
+            <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
+            <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
+            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+          </div>
+
+          <button ng-click="changeTask('status','doing',task.id)"><</button>
+
+        <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
+          <p>Assignees: </p>
+          <div ng-repeat="tuser in taskusers">
+            <p>
+              {{tuser.first_name}}
+            </p>
+          </div>
+          <select ng-model="this_user">
+            <option selected disabled>Assign User</option>
+            <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
+          </select>
+          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+        </div>
       </div>
-    </li>
-    <li>
-      <div ng-init="editModeDes.value=false">
-        <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
-        <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-        <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
-        <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
-      </div>
-    </li>
-    <li>
-      <button ng-click="changeTask('status','doing',task.id)"><</button>
-    </li>
-    <li ng-controller="UserController" ng-init="findTaskUsers(task.id)">
-      <p>Assignees: </p>
-      <ul ng-repeat="tuser in taskusers">
-        <li>
-          {{tuser.first_name}}
-        </li>
-      </ul>
-      <select ng-model="this_user">
-        <option selected disabled>Assign User</option>
-        <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
-      </select>
-      <button ng-click="addUserTask(this_user,task.id)">Assign</button>
-    </li>
-    </div>
-  </ul>
-</div>
+  </div>
 </div>
