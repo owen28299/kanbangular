@@ -10,7 +10,7 @@ nav {
   justify-content: space-around;
   align-items: flex-start;
   align-content: stretch;
-  background-color: rgba(0, 0, 255, 0);
+  background-color: rgba(0, 255, 255, 0.2);
 }
 
 #pageTitle {
@@ -34,7 +34,7 @@ nav {
   font-weight: 900em;
 }
 
-.ng-enter {
+/*.ng-enter {
   transition-delay: 0.5s;
   transition:0.5s linear all;
   opacity:0;
@@ -42,7 +42,7 @@ nav {
 .ng-enter.ng-enter-active {
   transition-delay: 0.5s;
   opacity:1;
-}
+}*/
 
 ul {
   list-style-type: none;

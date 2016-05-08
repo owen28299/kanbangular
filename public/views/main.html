@@ -28,8 +28,10 @@
   <h2 id="pageWording">To Do</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='todo'" class="task">
-          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
 
+          <div ng-hide="true">!{{task.id}}!</div>
+
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
             <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
@@ -68,7 +70,10 @@
   <h2 id="pageWording">Doing</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='doing'" class="task">
-          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
+
+          <div ng-hide="true">!{{task.id}}!</div>
+
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -108,7 +113,10 @@
   <h2 id="pageWording">Done</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='done'" class="task">
-          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
+
+          <div ng-hide="true">!{{task.id}}!</div>
+
+          <button ng-click="deleteTask(task.id)">Delete Task</button>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
