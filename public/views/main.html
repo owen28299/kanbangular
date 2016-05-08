@@ -28,7 +28,7 @@
   <h2 id="pageWording">To Do</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='todo'" class="task">
-          <button ng-click="deleteTask(task.id)">Delete Task</button>
+          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -54,10 +54,10 @@
             </p>
           </div>
           <select ng-model="this_user">
-            <option selected disabled>Assign User</option>
+            <option selected disabled class="dropdown">Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
@@ -68,7 +68,7 @@
   <h2 id="pageWording">Doing</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='doing'" class="task">
-          <button ng-click="deleteTask(task.id)">Delete Task</button>
+          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -98,7 +98,7 @@
             <option selected disabled>Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
@@ -108,7 +108,7 @@
   <h2 id="pageWording">Done</h2>
   <div dragula="'task-item'">
       <div ng-repeat="task in tasks | filter:task.status='done'" class="task">
-          <button ng-click="deleteTask(task.id)">Delete Task</button>
+          <button ng-click="deleteTask(task.id)" class="form">Delete Task</button>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -137,7 +137,7 @@
             <option selected disabled>Assign User</option>
             <option ng-repeat="user in users" value="{{user}}">{{user.first_name}}</option>
           </select>
-          <button ng-click="addUserTask(this_user,task.id)">Assign</button>
+          <button ng-click="addUserTask(this_user,task.id)" class="form">Assign</button>
         </div>
       </div>
   </div>
