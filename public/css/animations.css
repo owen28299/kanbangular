@@ -10,7 +10,7 @@ nav {
   justify-content: space-around;
   align-items: flex-start;
   align-content: stretch;
-  background-color: rgba(0, 255, 255, 0.2);
+  background-color: hsla(190, 100%, 50%, 0.2);
 }
 
 #pageTitle {
@@ -63,7 +63,7 @@ div#container {
 }
 
 div#todo {
-  width: 21%;
+  width: 26%;
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
@@ -71,7 +71,7 @@ div#todo {
 }
 
 div#doing {
-  width: 21%;
+  width: 26%;
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
@@ -79,7 +79,7 @@ div#doing {
 }
 
 div#done {
-  width: 21%;
+  width: 26%;
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;

@@ -18,6 +18,7 @@
       $scope.addTask = function(task) {
         TaskService.addTask(task, function(tasks){
           $scope.tasks = tasks;
+          $scope.newtask = false;
         });
       }
       ;
