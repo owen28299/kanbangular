@@ -3,10 +3,20 @@ body {
   background-size: cover;
 }
 
-h1#pageTitle {
+#pageTitle {
   font-family: 'Rock Salt', cursive;
+  font-size: 270%;
 }
 
+#pageWording {
+  font-family: 'Caveat', cursive;
+  font-size: 200%;
+}
+
+#inputWording {
+  font-family: 'Caveat', cursive;
+  font-size: 125%;
+}
 
 .ng-enter {
   transition-delay: 0.5s;
@@ -40,6 +50,7 @@ div#todo {
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
+  background-color: #66CCFF;
 }
 
 div#doing {
@@ -47,7 +58,7 @@ div#doing {
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
-
+  background-color: #66CCFF;
 }
 
 div#done {
@@ -55,6 +66,7 @@ div#done {
   border: 2px solid black;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
+  background-color: #66CCFF;
 }
 
 div#addtask {
@@ -69,6 +81,7 @@ div#addtask {
   padding: 1em;
   margin-right: 3em;
   background-image: url('./assets/crumpled-paper.jpg');
+  background-size: 100%;
 }
 
 a {
@@ -89,4 +102,13 @@ a:hover {
 .style-1 input[type="text"]:focus,
 .style-1 input[type="text"].focus {
   border: solid 10px #969696;
+}
+button.form {
+  background-color: #66CCFF;
+  border: none;
+  padding: 3px 8px;
+  color: white;
+}
+button.form:hover {
+  background-color: #0099FF;
 }
