@@ -2,7 +2,7 @@
 
 (function(){
 
-  angular.module('kanban', ['ngRoute', 'ngAnimate']);
+  angular.module('kanban', ['ngRoute', 'ngAnimate', angularDragula(angular)]);
 
   var myApp = angular.module('kanban');
 

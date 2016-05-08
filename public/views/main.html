@@ -1,18 +1,20 @@
-<h1>{{name}}</h1>
+<h1 id=pageTitle>{{name}}</h1>
 <div id="container">
 <form>
   <div id="addtask">
+  <div>
     <label for="Title">Task</label>
-    <input type="text" id="Title" ng-model="newTask.title">
-  </div>
+    <input type="text" id="Title" ng-model="newTask.title" size="30" class="style-1">
+  </div><br>
   <div>
     <label for="Description">Description</label>
-    <input type="text" id="Description" ng-model="newTask.description">
-  </div>
+    <input type="text" id="Description" ng-model="newTask.description" size="30" class="style-1">
+  </div><br>
   <div>
     <label for="Status">Status</label>
-    <input type="text" id="Status" ng-model="newTask.status">
+    <input type="text" id="Status" ng-model="newTask.status" size="30" class="style-1">
   </div>
+  </div><br>
   <div>
     <button ng-click="addTask(newTask)">Add Task</button>
   </div>
@@ -61,6 +63,8 @@
     </div>
   </ul>
 </div>
+
+
 <div id="doing">
   <h2>Doing</h2>
   <ul ng-repeat="task in tasks | filter:task.status='doing'">
@@ -101,6 +105,7 @@
     </div>
   </ul>
 </div>
+
 <div id="done">
   <h2>Done</h2>
   <ul ng-repeat="task in tasks | filter:task.status='done'">

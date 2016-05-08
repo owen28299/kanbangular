@@ -6,8 +6,8 @@ const express = require('express'),
       taskRoute = require('./routes/task'),
       userRoute = require('./routes/user'),
       bodyParser = require('body-parser'),
-      db = require('./models')
-      ;
+      db = require('./models');
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
