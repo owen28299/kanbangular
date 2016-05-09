@@ -31,7 +31,7 @@
 
 <div id="todo">
   <h2 id="pageWording">To Do</h2>
-  <div dragula="'task-item'">
+  <div dragula="'task-item'" class="dragbox">
       <div ng-repeat="task in tasks | filter:task.status='todo'" class="task">
 
           <div ng-hide="true">!{{task.id}}!</div>
@@ -73,7 +73,7 @@
 
 <div id="doing">
   <h2 id="pageWording">Doing</h2>
-  <div dragula="'task-item'">
+  <div dragula="'task-item'" class="dragbox">
       <div ng-repeat="task in tasks | filter:task.status='doing'" class="task">
 
           <div ng-hide="true">!{{task.id}}!</div>
@@ -116,7 +116,7 @@
 
 <div id="done">
   <h2 id="pageWording">Done</h2>
-  <div dragula="'task-item'">
+  <div dragula="'task-item'" class="dragbox">
       <div ng-repeat="task in tasks | filter:task.status='done'" class="task">
 
           <div ng-hide="true">!{{task.id}}!</div>

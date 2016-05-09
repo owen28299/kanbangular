@@ -149,3 +149,7 @@ div#newtask_form {
 #main_addtask{
   margin-bottom: 20px;
 }
+
+.dragbox {
+  min-height: 500px;
+}
