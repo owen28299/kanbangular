@@ -95,13 +95,23 @@ function userModel(){
     });
   }
 
+  function removeUserTask(user_id, task_id){
+    return UserTask.destroy({
+      where : {
+        UserId : user_id,
+        TaskId : task_id
+      }
+    });
+  }
+
   return {
-    addUser      : addUser,
-    getUsers     : getUsers,
-    getUser      : getUser,
-    addUserTask  : addUserTask,
-    getUserTasks : getUserTasks,
-    getTaskUsers : getTaskUsers
+    addUser        : addUser,
+    getUsers       : getUsers,
+    getUser        : getUser,
+    addUserTask    : addUserTask,
+    getUserTasks   : getUserTasks,
+    getTaskUsers   : getTaskUsers,
+    removeUserTask : removeUserTask
   };
 
 }

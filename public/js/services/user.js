@@ -66,6 +66,10 @@
           });
         };
 
+        this.removeUserTask = function(user_id, task_id){
+          return $http.delete('/user/usertask/' + user_id + "/" + task_id);
+        };
+
     }]);
 
 })();
