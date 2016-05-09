@@ -1,12 +1,12 @@
-<h1>Log In</h1>
+<h1 id="pageWording">Log In</h1>
 <form>
-  <div>
+  <div id="loginContainer">
     <label for="username">Username</label>
-    <input type="text" id="username" ng-model="user.username">
+    <input type="text" id="username" ng-model="user.username" size="20" class="style-1">
   </div>
   <div>
     <label for="password">Password</label>
-    <input type="password" id="password" ng-model="user.password">
+    <input type="password" id="password" ng-model="user.password" size="20" class="style-1">
   </div>
   <div>
     <button ng-click="login(user)">Login</button>

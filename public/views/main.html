@@ -7,11 +7,11 @@
 <div id="newtask_form">
   <form ng-show="newtask" id="addtask_form">
     <div id="addtask">
-    <div>
+    <div class="filler">
       <label for="Title" id="pageWording">Task</label>
       <input type="text" id="Title" ng-model="newTask.title" size="30" class="style-1">
     </div><br>
-    <div>
+    <div class="filler">
       <label for="Description" id="pageWording">Description</label>
       <input type="text" id="Description" ng-model="newTask.description" size="30" class="style-1">
     </div><br>
@@ -20,7 +20,7 @@
       <input type="text" id="Status" ng-model="newTask.status" size="30" class="style-1">
     </div>
     </div><br>
-    <div>
+    <div class="filler">
       <button ng-click="addTask(newTask)" class="form">Add Task</button>
       <button ng-click="newtask=false" class="form">Cancel</button>
     </div>
