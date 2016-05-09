@@ -58,6 +58,7 @@
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
+              <button ng-click="removeUserTask(tuser.id, task.id)">X</button>
             </p>
           </div>
           <select ng-model="this_user">
@@ -102,6 +103,7 @@
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
+              <button ng-click="removeUserTask(tuser.id, task.id)">X</button>
             </p>
           </div>
           <select ng-model="this_user">
@@ -144,6 +146,7 @@
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
+              <button ng-click="removeUserTask(tuser.id, task.id)">X</button>
             </p>
           </div>
           <select ng-model="this_user">

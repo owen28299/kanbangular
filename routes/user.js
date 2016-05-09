@@ -53,4 +53,10 @@ router.route('/taskuser/:id')
     });
   });
 
+router.route('/usertask/:user/:task')
+  .delete(function(req,res){
+    userModel.removeUserTask(req.params.user, req.params.task);
+    res.send("deleted");
+  });
+
 module.exports = router;
