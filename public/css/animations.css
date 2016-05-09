@@ -67,6 +67,7 @@ div#todo, div#doing, div#done {
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
   background-color: #E8E8E8;
+  border-radius: 8px;
 }
 
 div#addtask {
@@ -83,6 +84,7 @@ div#addtask {
   margin-right: 3em;
   background-color: #D0D0D0;
   box-shadow: 8px 8px 3px #888888;
+  border-radius: 8px;
 }
 
 a {
