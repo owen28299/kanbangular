@@ -8,8 +8,6 @@ var config = process.env.NODE_ENV === 'production'
 
 module.exports = function() {
 
-console.log('USERNAME', process.env.USERNAME);
-
 return {
   "development": {
    "username": process.env.USERNAME || config.development.username,

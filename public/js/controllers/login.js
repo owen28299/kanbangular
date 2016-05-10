@@ -14,6 +14,9 @@
               $rootScope.currUser = response.data;
               $window.location.href="/";
             }
+          })
+          .catch(function(error){
+            console.log(error);
           });
         };
       }]);

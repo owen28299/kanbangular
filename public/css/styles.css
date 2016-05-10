@@ -105,11 +105,10 @@ ul {
 }
 
 #addtask {
-  width: 15%;
+  /*width: 15%;*/
   display: flex;
   flex-direction: column;
   text-align: left;
-  background-color: #E8E8E8;
 }
 
 .task {
@@ -152,7 +151,6 @@ a:hover {
 }
 
 #newtask_form {
-  background-color: #D0D0D0;
   display: flex;
   justify-content: center;
 }
@@ -160,6 +158,9 @@ a:hover {
 #addtask_form {
   padding: 20px;
   max-width: 255px;
+  background-color: hsl(0,0%,90%);
+  border-radius: 10px;
+  margin-bottom: 25px;
 }
 
 #main_addtask{
@@ -233,4 +234,8 @@ a:hover {
 
 .spacer {
   min-width: 500px;
+}
+
+.inputnewtask input[type="text"] {
+  min-width: 300px;
 }
