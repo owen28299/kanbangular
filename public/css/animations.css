@@ -169,3 +169,25 @@ a:hover {
   color: #808080;
 }
 
+.assignee {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  align-content: center;
+  padding: 0px;
+}
+
+.assignee p {
+  margin: 0px;
+  padding: 0px;
+  padding-bottom: 3px;
+}
+
+.crosses {
+  height: 15px;
+  width: 15px;
+  padding-left: 5px;
+}
+
