@@ -2,8 +2,8 @@
 
 (function(){
   angular.module('kanban')
-    .controller('UserController', ['$scope', '$http', 'UserService',
-    function($scope, $http, UserService){
+    .controller('UserController', ['$scope', '$http', 'UserService', '$window',
+    function($scope, $http, UserService, $window){
       $scope.signup = "Sign Up Now!!!";
 
       $scope.addUser = function(user){
@@ -28,16 +28,23 @@
         if(!exists){
           UserService.addUserTask(JSON.parse(user).id, task_id).then(function(){
             $scope.taskusers.push(JSON.parse(user));
+          })
+          .catch(function(error){
+            console.log(error);
+            $window.location.href = "/login";
           });
         }
       };
 
       $scope.removeUserTask = function(user_id, task_id){
         UserService.removeUserTask(user_id, task_id).then(function(response){
-          console.log(response.data);
           $scope.taskusers = $scope.taskusers.filter(function(element){
             return element.id !== user_id;
           });
+        })
+        .catch(function(error){
+          console.log(error);
+          $window.location.href = "/login";
         });
       };
 

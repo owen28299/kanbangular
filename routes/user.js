@@ -34,7 +34,7 @@ router.route('/:name')
   });
 
 router.route('/usertask')
-  .post(function(req,res){
+  .post(isAuthenticated, function(req,res){
     userModel.addUserTask(req.body.user_id, req.body.task_id);
     res.send(req.body);
   })
@@ -55,7 +55,7 @@ router.route('/taskuser/:id')
   });
 
 router.route('/usertask/:user/:task')
-  .delete(function(req,res){
+  .delete(isAuthenticated, function(req,res){
     userModel.removeUserTask(req.params.user, req.params.task);
     res.send("deleted");
   });
