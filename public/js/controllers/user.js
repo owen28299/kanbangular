@@ -19,8 +19,9 @@
         var exists;
 
         $scope.taskusers.forEach(function(element){
-          if (element.id === JSON.parse(user).id){
+          if(element.id === JSON.parse(user).id){
             exists = true;
+            console.log("already exists");
           }
         });
 
@@ -29,7 +30,6 @@
             $scope.taskusers.push(JSON.parse(user));
           });
         }
-
       };
 
       $scope.removeUserTask = function(user_id, task_id){
