@@ -1,8 +1,8 @@
-<h1>Tasks by User</h1>
+<h2 id="pageWording">Tasks by User</h2>
 
 <input type="text" ng-model="me" ng-change="findUserTasks(me)">
 
-<p>Searching for tasks of: {{me}}</p>
+<p id="addTaskWord">Searching for tasks of: {{me}}</p>
 
 <ul ng-repeat='task in myTasks'>
   <li>

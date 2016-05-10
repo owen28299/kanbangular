@@ -1,4 +1,4 @@
-<h1>{{signup}}</h1>
+<h1 id="pageWording">{{signup}}</h1>
 <form>
   <div>
     <label for="first_name">First Name</label>
@@ -17,6 +17,6 @@
     <input type="password" id="password" ng-model="newUser.password">
   </div>
   <div>
-    <button ng-click="addUser(newUser)">Sign Up</button>
+    <button ng-click="addUser(newUser)" class="form">Sign Up</button>
   </div>
 </form>
