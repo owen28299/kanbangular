@@ -1,4 +1,4 @@
-nav {
+.navBar {
   display: flex;
   flex direction: row;
   flex-wrap: nowrap;
@@ -6,27 +6,40 @@ nav {
   align-items: flex-start;
   align-content: stretch;
   background-color: #D0D0D0;
+  font-size: 80%;
 }
 
 #pageTitle {
   font-family: 'Rock Salt', cursive;
   font-size: 270%;
+  text-shadow:  0px 3px 0px #E8E8E8,
+                0px 14px 10px rgba(0,0,0,0.15),
+                0px 24px 2px rgba(0,0,0,0.1),
+                0px 34px 30px rgba(0,0,0,0.1);
+  margin-left: 20px;
+  color: #303030;
+}
+
+#addTaskWord {
+  font-family: 'Lato', sans-serif;
+  font-size: 100%;
 }
 
 #pageWording {
-  font-family: 'Caveat', cursive;
-  font-size: 200%;
+  font-family: 'Lato', sans-serif;
+  font-size: 140%;
 }
 
 #inputWording {
-  font-family: 'Caveat', cursive;
+  font-family: 'Lato', sans-serif;
   font-size: 125%;
 }
 
 .navWording {
-  font-family: 'Caveat', cursive;
+  font-family: 'Lato', sans-serif;
   font-size: 125%;
   font-weight: 900em;
+  color: #505050;
 }
 
 .filler {
@@ -37,14 +50,14 @@ ul {
   list-style-type: none;
 }
 
-div#container {
+#container {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: flex-start;
   align-content: stretch;
-  border: 3px solid black;
+  border: 2px solid black;
   font-size: .60em;
   padding: 1em;
   border-radius: 8px;
@@ -52,7 +65,7 @@ div#container {
   background-color: #F8F8F8;
 }
 
-div#loginContainer {
+#loginContainer {
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -61,16 +74,17 @@ div#loginContainer {
   flex-direction: row;
 }
 
-div#todo, div#doing, div#done {
-  width: 26%;
-  border: 2px solid black;
+#todo, #doing, #done {
+  width: 29%;
+  border: none;
   padding: 1em;
   box-shadow: 8px 8px 3px #888888;
   background-color: #E8E8E8;
   border-radius: 8px;
+  color: #505050;
 }
 
-div#addtask {
+#addtask {
   width: 15%;
   display: flex;
   flex-direction: column;
@@ -79,12 +93,14 @@ div#addtask {
 }
 
 .task {
-  border: 1px solid black;
+  border: none;
   padding: 1em;
-  margin-right: 3em;
+  margin: 0 1em 2em 1em;
   background-color: #D0D0D0;
   box-shadow: 8px 8px 3px #888888;
   border-radius: 8px;
+  color: #282828;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -108,17 +124,17 @@ a:hover {
   border: solid 10px #969696;
 }
 
-button.form {
+.form {
   background-color: #66CCFF;
   border: none;
   padding: 3px 8px;
   color: white;
 }
-button.form:hover {
+.form:hover {
   background-color: #0099FF;
 }
 
-div#newtask_form {
+#newtask_form {
   background-color: #D0D0D0;
   display: flex;
   justify-content: center;
@@ -137,10 +153,19 @@ div#newtask_form {
   min-height: 500px;
 }
 
-input#username {
+#username, #password  {
   margin-left: 8px;
 }
 
-input#password {
-  margin-left: 8px;
+.trashcan {
+  height: 20px;
+  width: 20px;
+  color: #808080;
 }
+
+.arrows {
+  height: 15px;
+  width: 15px;
+  color: #808080;
+}
+
