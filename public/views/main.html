@@ -38,8 +38,8 @@
 
           <div class="binarrow">
             <div></div>
-            <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
-            <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
+            <a href="#"><img ng-click="deleteTask(task.id)" src="/assets/trashcan.png" class="trashcan"></a>
+            <a href="#"><img src="/assets/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
           </div>
 
           <div ng-init="editMode.value=false">
@@ -63,7 +63,7 @@
           <div ng-repeat="tuser in taskusers">
             <div class="assignee">
               <p>{{tuser.first_name}}</p>
-              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+              <a href="#"><img src="/assets/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
             </div>
           </div>
           <select ng-model="this_user">
@@ -85,11 +85,11 @@
           <div ng-hide="true">!{{task.id}}!</div>
 
           <div class="binarrow">
-            <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','todo',task.id)"></a>
+            <a href="#"><img src="/assets/arrow-left.svg" class="arrows" ng-click="changeTask('status','todo',task.id)"></a>
 
-            <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+            <a href="#"><img ng-click="deleteTask(task.id)" src="/assets/trashcan.png" class="trashcan"></a>
 
-            <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','done',task.id)"></a>
+            <a href="#"><img src="/assets/arrow-right.svg" class="arrows" ng-click="changeTask('status','done',task.id)"></a>
           </div>
 
 
@@ -112,7 +112,7 @@
           <div ng-repeat="tuser in taskusers">
             <div class="assignee">
             <p>{{tuser.first_name}}</p>
-              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+              <a href="#"><img src="/assets/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
           </div>
           </div>
           <select ng-model="this_user">
@@ -133,9 +133,9 @@
           <div ng-hide="true">!{{task.id}}!</div>
 
         <div class="binarrow">
-          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
+          <a href="#"><img src="/assets/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
-          <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+          <a href="#"><img ng-click="deleteTask(task.id)" src="/assets/trashcan.png" class="trashcan"></a>
 
           <div></div>
         </div>
@@ -150,8 +150,8 @@
           <div ng-init="editModeDes.value=false">
             <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
             <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-            <button type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)"></button>
-            <button type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)"></button>
+            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)"></input>
+            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)"></input>
           </div>
 
 
@@ -160,7 +160,7 @@
           <div ng-repeat="tuser in taskusers">
           <div class="assignee">
             <p>{{tuser.first_name}}</p>
-              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+              <a href="#"><img src="/assets/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
             </div>
           </div>
           <select ng-model="this_user">
