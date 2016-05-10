@@ -15,25 +15,28 @@ const express         = require('express'),
       passport        = require('./passport')
       ;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app
+  .use(bodyParser.urlencoded({ extended: true }))
+  .use(bodyParser.json());
 
-app.use(cookieParser());
-app.use(session({
-  secret : process.env.SECRET || 'chocolate',
-  resave : true,
-  saveUninitialized : true
-}));
+app
+  .use(cookieParser())
+  .use(session({
+    secret : process.env.SECRET || 'chocolate',
+    resave : true,
+    saveUninitialized : true
+  }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+app
+  .use(passport.initialize())
+  .use(passport.session());
 
-app.use(express.static('public'));
-app.use('/task', taskRoute);
-app.use('/user', userRoute);
-app.use('/login', loginRoute);
-app.use('/logout', logoutRoute);
-
+app
+  .use(express.static('public'))
+  .use('/task', taskRoute)
+  .use('/user', userRoute)
+  .use('/login', loginRoute)
+  .use('/logout', logoutRoute);
 
 app.get('/ping', isAuthenticated, function(req,res){
   res.send("logged in");

@@ -2,7 +2,7 @@
 
 <h2 id="pageWording">Welcome: {{currUser.first_name}}</h2>
 
-<button id="main_addtask" ng-hide="newtask" ng-click="newtask='true'" class="form">Add Task</button>
+<button id="main_addtask" ng-hide="newtask" ng-click="showAddForm()" class="form">Add Task</button>
 
 <div id="newtask_form">
   <form ng-show="newtask" id="addtask_form">
@@ -22,7 +22,7 @@
     </div><br>
     <div class="filler">
       <button ng-click="addTask(newTask)" class="form">Add Task</button>
-      <button ng-click="newtask=false" class="form">Cancel</button>
+      <button ng-click="showAddForm()" class="form">Cancel</button>
     </div>
   </form>
 </div>

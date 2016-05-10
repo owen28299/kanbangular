@@ -2,8 +2,8 @@
 
 (function(){
   angular.module('kanban')
-    .controller('MainController', ['$scope', '$http', 'TaskService', '$window',
-    function($scope, $http, TaskService, $window){
+    .controller('MainController', ['$scope', '$http', 'TaskService', '$window', '$rootScope' ,
+    function($scope, $http, TaskService, $window, $rootScope){
 
       $scope.name = "KanBangular";
 
@@ -14,6 +14,21 @@
       .catch(function(){
         $window.location.href = '/login';
       });
+
+      $scope.showAddForm = function(){
+
+        if($rootScope.isLoggedIn === false){
+          $window.location.href = "/login";
+          return;
+        }
+
+        if(!$scope.newtask){
+          $scope.newtask = true;
+        }
+        else {
+          $scope.newtask = false;
+        }
+      };
 
       $scope.addTask = function(task) {
         TaskService.addTask(task, function(tasks){

@@ -38,11 +38,13 @@
     }])
     .run(['$window', '$rootScope', '$http',
     function($window, $rootScope, $http){
+      $rootScope.isLoggedIn = false;
+
       var currUser = JSON.parse($window.sessionStorage.getItem('user'));
       $rootScope.currUser =  currUser;
 
       $http.get('/ping').then(function(){
-        console.log("Logged in as " + currUser.username);
+        $rootScope.isLoggedIn = true;
       })
       .catch(function(){
         $rootScope.currUser =  {
