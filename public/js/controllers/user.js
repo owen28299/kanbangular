@@ -7,7 +7,14 @@
       $scope.signup = "Sign Up";
 
       $scope.addUser = function(user){
-        UserService.addUser(user);
+        if(user.password !== user.password2){
+          console.log("passwords do not match");
+        }
+        else {
+          UserService.addUser(user).then(function(){
+            $window.location.href = "/login";
+          });
+        }
       };
 
       $scope.users = [];
