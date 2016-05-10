@@ -56,10 +56,10 @@
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
-            <p>
-              {{tuser.first_name}}
-              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
-            </p>
+            <div class="assignee">
+              <p>{{tuser.first_name}}</p>
+              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+            </div>
           </div>
           <select ng-model="this_user">
             <option selected disabled class="dropdown">Assign User</option>
@@ -101,10 +101,10 @@
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
-            <p>
-              {{tuser.first_name}}
-              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
-            </p>
+            <div class="assignee">
+            <p>{{tuser.first_name}}</p>
+              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+          </div>
           </div>
           <select ng-model="this_user">
             <option selected disabled>Assign User</option>
@@ -144,10 +144,10 @@
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
-            <p>
-              {{tuser.first_name}}
-              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
-            </p>
+          <div class="assignee">
+            <p>{{tuser.first_name}}</p>
+              <a href="#"><img src="/css/cross.svg" class="crosses" ng-click="removeUserTask(tuser.id, task.id)"></a>
+            </div>
           </div>
           <select ng-model="this_user">
             <option selected disabled>Assign User</option>
