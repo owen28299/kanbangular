@@ -36,7 +36,7 @@
 
           <div ng-hide="true">!{{task.id}}!</div>
 
-          <button ng-click="deleteTask(task.id)"><img src="/css/trashcan.png" class="trashcan"></button>
+          <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
             <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
@@ -79,7 +79,7 @@
 
           <div ng-hide="true">!{{task.id}}!</div>
 
-          <button ng-click="deleteTask(task.id)"><img src="/css/trashcan.png" class="trashcan"></button>
+          <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -123,7 +123,7 @@
 
           <div ng-hide="true">!{{task.id}}!</div>
 
-          <button ng-click="deleteTask(task.id)"><img src="/css/trashcan.png" class="trashcan"></button>
+          <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
