@@ -51,14 +51,14 @@
             <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
           </div>
 
-          <button ng-click="changeTask('status','doing',task.id)"><img src="/css/arrow-right.svg" class="arrows"></button>
+          <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
-              <button ng-click="removeUserTask(tuser.id, task.id)"><img src="/css/cross.svg" class="arrows"></button>
+              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
             </p>
           </div>
           <select ng-model="this_user">
@@ -95,15 +95,15 @@
             <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
           </div>
 
-          <button ng-click="changeTask('status','todo',task.id)"><img src="/css/arrow-left.svg" class="arrows"></button>
-          <button ng-click="changeTask('status','done',task.id)"><img src="/css/arrow-right.svg" class="arrows"></button>
+          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
+          <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
-              <button ng-click="removeUserTask(tuser.id, task.id)"><img src="/css/cross.svg" class="arrows"></button>
+              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
             </p>
           </div>
           <select ng-model="this_user">
@@ -139,14 +139,14 @@
             <button type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)"></button>
           </div>
 
-          <button ng-click="changeTask('status','doing',task.id)"><img src="/css/arrow-left.svg" class="arrows"></button>
+          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
           <div ng-repeat="tuser in taskusers">
             <p>
               {{tuser.first_name}}
-              <button ng-click="removeUserTask(tuser.id, task.id)"><img src="/css/cross.svg" class="arrows"></button>
+              <a href="#"><img src="/css/cross.svg" class="arrows" ng-click="removeUserTask(tuser.id, task.id)"></a>
             </p>
           </div>
           <select ng-model="this_user">
