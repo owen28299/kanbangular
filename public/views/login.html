@@ -1,14 +1,14 @@
-<h1 id="pageWording">Log In</h1>
-<form>
-  <div id="loginContainer">
-    <label for="username">Username</label>
-    <input type="text" id="username" ng-model="user.username" size="20" class="style-1">
-  </div>
-  <div>
-    <label for="password">Password</label>
-    <input type="password" id="password" ng-model="user.password" size="20" class="style-1">
-  </div>
-  <div>
-    <button ng-click="login(user)">Login</button>
-  </div>
-</form>
+<div id="loginLayout">
+  <h2 id="pageWording">Log In</h2>
+  <form>
+      <label for="username" id="addTaskWord">Username</label>
+      <input type="text" id="username" ng-model="user.username" class="loginInput" placeholder="username">
+    <div>
+      <label for="password" id="addTaskWord">Password</label>
+      <input type="password" id="password" ng-model="user.password" class="loginInput" placeholder="password">
+    </div>
+    <div>
+      <button ng-click="login(user)" class="form">Login</button>
+  </form>
+</div>
+</div>

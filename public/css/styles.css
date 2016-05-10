@@ -20,6 +20,30 @@
   color: #303030;
 }
 
+#tasksLayout {
+  margin: 1.5em 1.5em 0 1.5em;
+  background-color: #E8E8E8;
+  padding: 0.5em;
+  border-radius: 8px;
+  box-shadow: 8px 8px 3px #888888;
+}
+
+#loginLayout {
+  margin: 1.5em 1.5em 0 1.5em;
+  background-color: #E8E8E8;
+  padding: 0.5em;
+  border-radius: 8px;
+  box-shadow: 8px 8px 3px #888888;
+}
+
+#signUpLayout {
+  margin: 1.5em 1.5em 0 1.5em;
+  background-color: #E8E8E8;
+  padding: 0.5em;
+  border-radius: 8px;
+  box-shadow: 8px 8px 3px #888888;
+}
+
 #addTaskWord {
   font-family: 'Lato', sans-serif;
   font-size: 100%;
@@ -41,8 +65,6 @@
   font-weight: 900em;
   color: #505050;
 }
-
-
 
 ul {
   list-style-type: none;
@@ -87,6 +109,7 @@ ul {
   display: flex;
   flex-direction: column;
   text-align: left;
+  background-color: #E8E8E8;
 }
 
 .task {
@@ -109,16 +132,13 @@ a:hover {
   color: gray;
 }
 
-.style-1 input[type="text"] {
-  padding: 10px;
-  border: solid 7px #c9c9c9;
-  box-shadow: inset 0 0 0 2px #707070;
-  transition: box-shadow 0.3s, border 0.3s;
-}
-
-.style-1 input[type="text"]:focus,
-.style-1 input[type="text"].focus {
-  border: solid 10px #969696;
+.taskInput, .loginInput, input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 8px 8px 3px #888888;
 }
 
 .form {
@@ -132,6 +152,7 @@ a:hover {
 }
 
 #newtask_form {
+  background-color: #D0D0D0;
   display: flex;
   justify-content: center;
 }
