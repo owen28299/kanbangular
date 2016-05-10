@@ -2,12 +2,19 @@
 
 (function(){
   angular.module('kanban')
-    .controller('UserController', ['$scope', '$http', 'UserService',
-    function($scope, $http, UserService){
-      $scope.signup = "Sign Up Now!!!";
+    .controller('UserController', ['$scope', '$http', 'UserService', '$window',
+    function($scope, $http, UserService, $window){
+      $scope.signup = "Sign Up";
 
       $scope.addUser = function(user){
-        UserService.addUser(user);
+        if(user.password !== user.password2){
+          console.log("passwords do not match");
+        }
+        else {
+          UserService.addUser(user).then(function(){
+            $window.location.href = "/login";
+          });
+        }
       };
 
       $scope.users = [];
@@ -16,17 +23,35 @@
       });
 
       $scope.addUserTask = function(user, task_id){
-        UserService.addUserTask(JSON.parse(user).id, task_id).then(function(){
-          $scope.taskusers.push(JSON.parse(user));
+        var exists;
+
+        $scope.taskusers.forEach(function(element){
+          if(element.id === JSON.parse(user).id){
+            exists = true;
+            console.log("already exists");
+          }
         });
+
+        if(!exists){
+          UserService.addUserTask(JSON.parse(user).id, task_id).then(function(){
+            $scope.taskusers.push(JSON.parse(user));
+          })
+          .catch(function(error){
+            console.log(error);
+            $window.location.href = "/login";
+          });
+        }
       };
 
       $scope.removeUserTask = function(user_id, task_id){
         UserService.removeUserTask(user_id, task_id).then(function(response){
-          console.log(response.data);
           $scope.taskusers = $scope.taskusers.filter(function(element){
             return element.id !== user_id;
           });
+        })
+        .catch(function(error){
+          console.log(error);
+          $window.location.href = "/login";
         });
       };
 

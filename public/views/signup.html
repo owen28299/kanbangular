@@ -17,6 +17,10 @@
     <input type="password" id="password" ng-model="newUser.password">
   </div>
   <div>
-    <button ng-click="addUser(newUser)" class="form">Sign Up</button>
+    <label for="password2">Retype Password</label>
+    <input type="password" id="password2" ng-model="newUser.password2">
+  </div>
+  <div>
+    <button ng-click="addUser(newUser)">Sign Up</button>
   </div>
 </form>
