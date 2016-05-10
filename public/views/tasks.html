@@ -1,10 +1,12 @@
+<div id="tasksLayout">
+
 <h2 id="pageWording">Tasks by User</h2>
 
-<input type="text" ng-model="me" ng-change="findUserTasks(me)">
+<input type="text" ng-model="me" ng-change="findUserTasks(me)" placeholder="Search User" size="27" class="taskInput">
 
-<p id="addTaskWord">Searching for tasks of: {{me}}</p>
+<p id="inputWording">Searching for tasks of: {{me}}</p>
 
-<ul ng-repeat='task in myTasks'>
+<ul ng-repeat='task in myTasks' id="addTaskWord">
   <li>
     {{task.title}}
   </li>
@@ -15,3 +17,4 @@
     {{task.status}}
   </li>
 </ul>
+</div>
