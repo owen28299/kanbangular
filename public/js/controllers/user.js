@@ -4,7 +4,7 @@
   angular.module('kanban')
     .controller('UserController', ['$scope', '$http', 'UserService', '$window',
     function($scope, $http, UserService, $window){
-      $scope.signup = "Sign Up Now!!!";
+      $scope.signup = "Sign Up";
 
       $scope.addUser = function(user){
         UserService.addUser(user);
