@@ -135,8 +135,8 @@
           <div ng-init="editModeDes.value=false">
             <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
             <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
-            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+            <button type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)"></button>
+            <button type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)"></button>
           </div>
 
           <button ng-click="changeTask('status','doing',task.id)"><img src="/css/arrow-left.svg" class="arrows"></button>
