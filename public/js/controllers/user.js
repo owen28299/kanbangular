@@ -16,9 +16,20 @@
       });
 
       $scope.addUserTask = function(user, task_id){
-        UserService.addUserTask(JSON.parse(user).id, task_id).then(function(){
-          $scope.taskusers.push(JSON.parse(user));
+        var exists;
+
+        $scope.taskusers.forEach(function(element){
+          if (element.id === JSON.parse(user).id){
+            exists = true;
+          }
         });
+
+        if(!exists){
+          UserService.addUserTask(JSON.parse(user).id, task_id).then(function(){
+            $scope.taskusers.push(JSON.parse(user));
+          });
+        }
+
       };
 
       $scope.removeUserTask = function(user_id, task_id){

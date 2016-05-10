@@ -2,7 +2,8 @@
 
 const express   = require('express'),
       router    = express.Router(),
-      userModel = require('./methods/usermodels')
+      userModel = require('./methods/usermodels'),
+      isAuthenticated = require('../middleware/isAuthenticated')
       ;
 
 router.route('/')
