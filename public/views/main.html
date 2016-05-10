@@ -45,18 +45,16 @@
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
             <input type="text" ng-init="titleText=task.title" ng-model="titleText" value="{{task.title}}" ng-show="editMode.value">
-            <input type="submit" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)">
-            <input type="submit" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)">
+            <a href="#"><img src="/assets/edit.svg" ng-show="editMode.value" ng-click="changeTask('title',titleText,task.id); toggle(editMode)" class="crosses"></a>
+            <a href="#"><img src="/assets/cross.svg" ng-show="editMode.value" value="Cancel" ng-click="toggle(editMode)" class="crosses"></a>
           </div>
 
           <div ng-init="editModeDes.value=false">
             <p ng-hide="editModeDes.value" ng-click="toggle(editModeDes)">{{task.description}}</p>
             <input type="text" ng-init="descriptionText=task.description" ng-model="descriptionText" value="{{task.description}}" ng-show="editModeDes.value">
-            <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
-            <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
+            <img src="/assets/edit.svg" class="crosses" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
+            <img src="/assets/cross.svg" class="crosses" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
           </div>
-
-
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
