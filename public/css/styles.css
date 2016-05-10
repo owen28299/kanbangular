@@ -230,3 +230,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
 }
+
+.spacer {
+  min-width: 500px;
+}
