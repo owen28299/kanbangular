@@ -151,6 +151,15 @@ a:hover {
 
 .dragbox {
   min-height: 500px;
+  cursor: pointer;
+}
+
+.dragbox:active {
+  cursor: -webkit-grab;
+}
+
+.dragbox p {
+  cursor: text;
 }
 
 #username, #password  {

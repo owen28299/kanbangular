@@ -37,8 +37,9 @@
           <div ng-hide="true">!{{task.id}}!</div>
 
           <div class="binarrow">
-            <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
+            <div></div>
             <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+            <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
           </div>
 
           <div ng-init="editMode.value=false">
@@ -83,7 +84,14 @@
 
           <div ng-hide="true">!{{task.id}}!</div>
 
-          <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+          <div class="binarrow">
+            <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','todo',task.id)"></a>
+
+            <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+
+            <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','done',task.id)"></a>
+          </div>
+
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -98,9 +106,6 @@
             <input type="submit" ng-show="editModeDes.value" ng-click="changeTask('description',descriptionText,task.id); toggle(editModeDes)">
             <input type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)">
           </div>
-
-          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
-          <a href="#"><img src="/css/arrow-right.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
@@ -127,7 +132,13 @@
 
           <div ng-hide="true">!{{task.id}}!</div>
 
+        <div class="binarrow">
+          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
+
           <a href="#"><img ng-click="deleteTask(task.id)" src="/css/trashcan.png" class="trashcan"></a>
+
+          <div></div>
+        </div>
 
           <div ng-init="editMode.value=false">
             <p ng-hide="editMode.value" ng-click="toggle(editMode)">{{task.title}}</p>
@@ -143,7 +154,6 @@
             <button type="submit" ng-show="editModeDes.value" value="Cancel" ng-click="toggle(editModeDes)"></button>
           </div>
 
-          <a href="#"><img src="/css/arrow-left.svg" class="arrows" ng-click="changeTask('status','doing',task.id)"></a>
 
         <div ng-controller="UserController" ng-init="findTaskUsers(task.id)">
           <p>Assignees: </p>
