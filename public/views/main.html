@@ -17,7 +17,11 @@
     </div><br>
     <div>
       <label for="Status" id="addTaskWord">Status</label>
-      <input type="text" id="Status" ng-model="newTask.status" size="30" class="inputnewtask">
+      <select ng-model="newTask.status">
+        <option value="todo">To Do</option>
+        <option value="doing">Doing</option>
+        <option value="done">Done</option>
+      </select>
     </div>
     </div><br>
     <div class="filler">
