@@ -236,6 +236,6 @@ a:hover {
   min-width: 500px;
 }
 
-.inputnewtask input[type="text"] {
-  min-width: 500px;
+#Title, #Description {
+  width: 80%;
 }
