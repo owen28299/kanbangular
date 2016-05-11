@@ -18,6 +18,7 @@ return {
  },
  "test": {
    "username": process.env.USERNAME || config.test.username,
+   "password": process.env.PASSWORD || config.development.password,
    "database": process.env.DATABASE || config.test.database,
    "host": process.env.HOST || config.test.host,
    "dialect": process.env.DIALECT || config.test.dialect
