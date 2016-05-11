@@ -3,23 +3,23 @@
   <form>
     <div>
       <label for="first_name" class="spacer">First Name</label>
-      <input type="text" id="first_name" ng-model="newUser.fname">
+      <input name="first_name" type="text" id="first_name" ng-model="newUser.fname">
     </div>
     <div>
       <label for="last_name" class="spacer">Last Name</label>
-      <input type="text" id="last_name" ng-model="newUser.lname">
+      <input name="last_name" type="text" id="last_name" ng-model="newUser.lname">
     </div>
     <div>
       <label for="username" class="spacer">Username</label>
-      <input type="text" id="username" ng-model="newUser.username">
+      <input name="username" type="text" id="username" ng-model="newUser.username">
     </div>
     <div>
       <label for="password" class="spacer">Password</label>
-      <input type="password" id="password" ng-model="newUser.password" class="loginInput">
+      <input name="password" type="password" id="password" ng-model="newUser.password" class="loginInput">
     </div>
     <div>
       <label for="password2" class="spacer">Retype Password</label>
-      <input type="password" id="password2" ng-model="newUser.password2" class="loginInput">
+      <input name="password2" type="password" id="password2" ng-model="newUser.password2" class="loginInput">
     </div>
     <div>
       <button ng-click="addUser(newUser)" class="form">Sign Up</button>

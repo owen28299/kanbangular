@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha -R spec --watch",
     "start": "node server.js"
   },
   "repository": {
@@ -33,5 +33,9 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.22.0",
     "sequelize-cli": "^2.4.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "zombie": "^4.2.1"
   }
 }
