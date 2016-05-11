@@ -7,7 +7,18 @@
       $scope.signup = "Sign Up";
 
       $scope.addUser = function(user){
-        if(user.password !== user.password2){
+        var exists;
+
+        $scope.users.forEach(function(element){
+          if(element.username === user.username){
+            exists = true;
+          }
+        });
+
+        if(exists){
+          console.log("username already exists");
+        }
+        else if(user.password !== user.password2){
           console.log("passwords do not match");
         }
         else {
